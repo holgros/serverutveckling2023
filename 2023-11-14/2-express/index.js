@@ -10,3 +10,10 @@ app.get("/", function (req, res) {
   console.log("En klient anslöt."); // skriv till serverns konsol
   res.sendFile(__dirname + "/index.html"); // läs in html-fil
 });
+
+app.get("/undersida", function (req, res) {
+  // route till undersida
+  res.sendFile(__dirname + "/undersida.html"); // läs in html-fil
+});
+
+app.use(express.static("filer")); // serva filer i mappen "filer"

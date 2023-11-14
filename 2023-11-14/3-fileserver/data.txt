@@ -1,0 +1,1 @@
+Text som finns i en fil.
