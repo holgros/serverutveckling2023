@@ -16,3 +16,13 @@ app.get("/filhantering", function (req, res) {
   res.write(data); // skriv till output
   res.send(); // skicka output till klient (webbläsare)
 });
+
+// filhantering: en enkel besöksräknare
+app.get("/visitors", function (req, res) {
+  let antal = fs.readFileSync("visitors.txt"); // läs in från fil
+  antal = Number(antal); // gör om från text till tal
+  antal++; // öka antal med ett
+  antal = antal.toString(); // gör om tillbaka från tal till text
+  fs.writeFileSync("visitors.txt", antal);
+  res.send(`Denna sida har laddats ${antal} gånger.`); // skriv till klienten (webbläsaren)
+});
