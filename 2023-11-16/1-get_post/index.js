@@ -18,3 +18,12 @@ app.get("/get-route", function (req, res) {
   console.log(summa);
   res.send(`${req.query.tal1}+${req.query.tal2}=${summa}`);
 });
+
+app.use(express.urlencoded({ extended: true })); // behövs för att processa data som skickats med POST
+// hit kommer data när post-formuläret skickas
+app.post("/post-route", function (req, res) {
+  console.log(req.body); // OBS: I POST har vi en body (I GET har vi ett query)
+  let summa = Number(req.body.tal1) + Number(req.body.tal2);
+  console.log(summa);
+  res.send(`${req.body.tal1}+${req.body.tal2}=${summa}`);
+});
