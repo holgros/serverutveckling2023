@@ -3,7 +3,7 @@ Sessioner är en teknik för att behålla kontakt mellan klient och server så a
 Se tutorial på t.ex. https://www.section.io/engineering-education/session-management-in-nodejs-using-expressjs-and-express-session/
 */
 
-// starta express-server
+// starta express-server.
 const express = require("express");
 const app = express();
 const port = 4000;
