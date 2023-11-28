@@ -11,10 +11,10 @@ con = mysql.createConnection({
   host: "localhost", // databas-serverns IP-adress
   user: "root", // standardanvändarnamn för XAMPP
   password: "", // standardlösenord för XAMPP
-  database: "webbserverprogrammering", // ÄNDRA TILL NAMN PÅ ER EGEN DATABAS
+  database: "jensen2023", // ÄNDRA TILL NAMN PÅ ER EGEN DATABAS
 });
 
-const COLUMNS = ["firstname", "lastname", "userId", "passwd"]; // ÄNDRA TILL NAMN PÅ KOLUMNER I ER EGEN TABELL
+const COLUMNS = ["id", "username", "password", "name", "email"]; // ÄNDRA TILL NAMN PÅ KOLUMNER I ER EGEN TABELL
 
 // grundläggande exempel - returnera en databastabell som JSON
 app.get("/users", function (req, res) {
